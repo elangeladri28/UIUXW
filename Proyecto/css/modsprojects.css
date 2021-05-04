@@ -1,0 +1,144 @@
+*{
+    transform-style: preserve-3d;
+    margin: 0;
+    padding: 0;
+    
+    
+}
+body{
+    background: linear-gradient(to right, #638C99,#8ecdff);
+
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* overflow: hidden; */
+   
+   
+}
+
+#main {
+    animation: fadeIn ease 500ms;
+    -webkit-animation: fadeIn ease 500ms;
+    -moz-animation: fadeIn ease 500ms;
+    -o-animation: fadeIn ease 500ms;
+    -ms-animation: fadeIn ease 500ms;
+    }
+
+    @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    
+}
+
+nav{
+    width: 80%;
+    position: sticky;
+    margin: 20px auto;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo{
+    flex-basis: 20%;
+}
+
+.logo img{
+    width: 100px;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+   
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.nav-links ul li a{
+    color:#fff;
+    text-decoration: none;
+    transition: 500ms;
+}
+.nav-links ul li a:hover{
+    border: solid;
+    padding: 10px;
+    border:1px;
+    border-radius: 50% ;
+    border-color: #00000000;
+    background-color: #638C99;
+    text-decoration: none;
+    transition: 500ms;
+    
+}
+
+.pics{
+    background-color: rgba(74, 151, 240, 0.534);
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    margin: 5%;
+    position: relative;
+    column-count: 5;
+    padding: 20px;
+}
+
+.image{
+
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 80%;
+    overflow: hidden;
+}
+
+.pics img{
+    /* padding-left: 50px; */
+    width: 100%;
+    opacity: .8;
+    transition: 0.25s ease-in-out;
+}
+
+.image:hover img{
+    transform: scale(1.1);
+    opacity: 2.0;
+    filter: contrast(1000%);
+}
+
+@media screen and (max-width:768px){
+    .pics{
+        column-count: 3;
+    }
+}
+
+@media screen and (max-width:425px){
+    .pics{
+        column-count: 2;
+    }
+}
+
+@media screen and (max-width:375px){
+    .pics{
+        column-count: 1;
+    }
+}
