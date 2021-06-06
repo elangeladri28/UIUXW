@@ -20,3 +20,45 @@
   .portfolio-item {
     margin-bottom: 30px;
   }
+
+  #bienvenida, #categorias{
+    font-family: 'Fjalla One', sans-serif;
+  }
+
+  .info-adicional{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .img-container{
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    position: relative;
+    
+  }
+
+  .img-container > img{
+
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+
+  }
+
+  #middle-pic{
+
+    margin-left: 100px;
+    margin-right: 100px;
+
+  }
+
+  @media screen and (max-width: 850px){
+   
+    #btniniciosesion{
+    
+    }
+
+  }
