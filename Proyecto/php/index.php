@@ -36,7 +36,9 @@
 
     <?php
 
-    >
+
+
+    ?>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light fixed-top shadow p-2 mb-4"
         style="background-color: #8ECDFF;">
         <div class="container">

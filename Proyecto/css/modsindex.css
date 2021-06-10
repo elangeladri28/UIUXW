@@ -3,12 +3,17 @@
  * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
  */
+
+ html{
+  scroll-behavior: smooth;
+ }
+
  body {
     padding-top: 56px;
   }
   
   .carousel-item {
-    height: 65vh;
+    height: 75vh;
     min-height: 300px;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
@@ -21,13 +26,19 @@
     margin-bottom: 30px;
   }
 
-  #bienvenida, #categorias{
-    font-family: 'Fjalla One', sans-serif;
+  #bienvenida, #categorias, #about, #PEC{
+    font-family: 'Fjalla One', sans-serif !important;
   }
 
   .info-adicional{
     display: flex;
     justify-content: space-between;
+    padding: 0;
+  }
+
+  .row img{
+    object-fit: cover;
+    max-height: 180px;
   }
 
   .img-container{
@@ -55,10 +66,25 @@
 
   }
 
-  @media screen and (max-width: 850px){
+  @media screen and (max-width: 1200px){
    
     #btniniciosesion{
     
+    }
+
+    .info-adicional{
+      display: inline;
+      
+    }
+
+
+    .img-container{
+      display: inline;
+     
+    }
+
+    #middle-pic{
+      margin: 0;
     }
 
   }
