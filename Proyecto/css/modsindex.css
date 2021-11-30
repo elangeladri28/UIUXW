@@ -4,87 +4,113 @@
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
  */
 
- html{
+html {
   scroll-behavior: smooth;
- }
+}
 
- body {
-    padding-top: 56px;
-  }
-  
-  .carousel-item {
-    height: 75vh;
-    min-height: 300px;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-  
-  .portfolio-item {
-    margin-bottom: 30px;
-  }
+body {
+  padding-top: 56px;
+}
 
-  #bienvenida, #categorias, #about, #PEC{
-    font-family: 'Fjalla One', sans-serif !important;
-  }
+.carousel-item {
+  height: 75vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
-  .info-adicional{
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-  }
+.portfolio-item {
+  margin-bottom: 30px;
+}
 
-  .row img{
-    object-fit: cover;
-    max-height: 180px;
-  }
+#bienvenida, #categorias, #about, #PEC {
+  font-family: 'Fjalla One', sans-serif !important;
+}
 
-  .img-container{
-    padding-top: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
+.info-adicional {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
 
-    position: relative;
-    
-  }
+.row img {
+  object-fit: cover;
+  max-height: 180px;
+}
 
-  .img-container > img{
+.img-container {
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  position: relative;
+}
 
-    display: block;
+.img-container>img {
+  display: block;
   margin-left: auto;
   margin-right: auto;
-  
+}
 
+#middle-pic {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#Buscador::-webkit-search-cancel-button {
+  display: none;
+}
+
+#Buscador {
+  max-width: 300px;
+  margin-left: 30px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 8px;
+}
+
+#QuieroRegistrar {
+  color: rgb(75, 146, 253);
+}
+
+#QuieroRegistrar:hover {
+  cursor: pointer;
+  color: rgb(75, 146, 253);
+  text-decoration: underline;
+}
+
+#QuieroIniciar {
+  color: rgb(75, 146, 253);
+}
+
+#QuieroIniciar:hover{
+  cursor: pointer;
+  color: rgb(75, 146, 253);
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1200px) {
+  .info-adicional {
+    display: inline;
+  }
+  .img-container {
+    display: inline;
+  }
+  #middle-pic {
+    margin: 0;
   }
 
-  #middle-pic{
-
-    margin-left: 100px;
-    margin-right: 100px;
-
+  #QuieroRegistrar{
+    margin-bottom: 20px;  
   }
 
-  @media screen and (max-width: 1200px){
-   
-    #btniniciosesion{
-    
-    }
-
-    .info-adicional{
-      display: inline;
-      
-    }
-
-
-    .img-container{
-      display: inline;
-     
-    }
-
-    #middle-pic{
-      margin: 0;
-    }
-
+  #QuieroIniciar{
+    margin-bottom: 20px;  
   }
+}

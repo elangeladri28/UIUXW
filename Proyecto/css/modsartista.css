@@ -1,9 +1,48 @@
 body {
-    padding-top: 56px;
+  padding-top: 56px;
+}
+
+.artist-imagen {}
+
+#Buscador::-webkit-search-cancel-button {
+  display: none;
+}
+
+#Buscador {
+  max-width: 500px;
+  margin-left: 50px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 8px;
+}
+
+#QuieroRegistrar {
+  color: rgb(75, 146, 253);
+}
+
+#QuieroRegistrar:hover {
+  cursor: pointer;
+  color: rgb(75, 146, 253);
+  text-decoration: underline;
+}
+
+#QuieroIniciar {
+  color: rgb(75, 146, 253);
+}
+
+#QuieroIniciar:hover {
+  cursor: pointer;
+  color: rgb(75, 146, 253);
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1200px) {
+  #Buscador {
+    max-width: 300px;
+    margin-left: 20px;
   }
-
-  .artist-imagen{
-
-   
-
-  }
+}

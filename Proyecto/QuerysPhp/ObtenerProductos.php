@@ -1,0 +1,15 @@
+<?php
+
+require_once("..\sql\models\Producto.php");
+
+$ProdName = $_GET["Producto"];
+$Precio = $_GET["Precio"];
+$Descripcion = $_GET["Descripcion"];
+$Categoria = $_GET["Categoria"];
+$Imagen = $_GET["Imagen"];
+
+$Productos = new ProductosModel();
+$resultados = $Productos->Mostrar_Productos($Usuario, $Contra);
+
+
+?>

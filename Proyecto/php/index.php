@@ -7,19 +7,16 @@
     <meta name="description" content="">
     <title>Industrial Painting</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/intro.js/minified/introjs.min.css">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 
@@ -33,45 +30,101 @@
 
 <body>
 
-
     <?php
+    session_start();
 
+    $Username_main;
+    if (isset($_SESSION["UserAct"])) {
+        $Usuario =  $_SESSION["UserAct"];
+        foreach ($Usuario as $renglon) {
+            foreach ($renglon as $columna => $valor) {
 
+                if ($columna == "Username" && $valor != null) {
+                    echo $valor;
+
+                    $Username_main = $valor;
+                }
+            }
+        }
+    }
 
     ?>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light fixed-top shadow p-2 mb-4"
-        style="background-color: #8ECDFF;">
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light fixed-top shadow p-2 mb-4" style="background-color: #8ECDFF;">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
                 <img src="../Images/Logo.png" alt="" width="60px">
                 Industrial Painting
             </a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
+
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                <form class="d-flex " style="margin-right: 5px;">
+
+                    <input id="Buscador" size="50" type="search" placeholder="Buscar" aria-label="Search">
+
+                </form>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#categ">Categorías</a>
+                        <a id="linkcateg" class="nav-link" href="#categ">Categorías</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">¿Quienes Somos?</a>
+                        <a id="linkabout" class="nav-link" href="#about">¿Quienes Somos?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.html">¿Necesitas Ayuda?
+                        <a id="aiuda" class="nav-link" style="cursor: pointer;">¿Necesitas Ayuda?
                         </a>
                     </li>
 
-                    <form class="d-flex " style="margin-right: 5px;">
 
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"
-                            style="margin-right: 5px;">
+                    <!-- <a id="btniniciosesion" class="btn btn-primary" href="Login.html">Iniciar Sesión</a> -->
+                    <!-- Button trigger modal -->
 
-                    </form>
+                    <?php
 
-                    <a id="btniniciosesion" class="btn btn-primary" href="Login.html">Iniciar Sesión</a>
+                    if (isset($_SESSION["UserAct"])) {
+
+
+
+                    ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?php
+                                echo $Username_main;
+                                ?>
+
+
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Carrito</a>
+                                <a class="dropdown-item" href="..\QuerysPhp\CerrarSesion.php">Salir</a>
+
+                            </div>
+                        </li>
+                    <?php
+
+                    } else {
+
+
+                    ?>
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Iniciar Sesion
+                        </button>
+
+
+                    <?php
+
+
+
+                    }
+
+                    ?>
+                    <!-- Modal -->
+
 
                 </ul>
             </div>
@@ -80,7 +133,24 @@
 
     <header>
         <br>
-        <h1 id="bienvenida" class="my-4" style="text-align: center;">¡Bienvenido de nuevo, elangeladri28!</h1>
+
+        <?php
+        if (isset($_SESSION["UserAct"])) {
+
+        ?>
+
+            <h1 id="bienvenida" class="my-4" style="text-align: center;">¡Bienvenido de nuevo, <?php echo $Username_main; ?>!</h1>
+
+        <?php
+
+        }
+        ?>
+
+
+        <?php
+
+
+        ?>
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -90,24 +160,21 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <!-- Slide One - Set the background image for this slide in the line below -->
-                <div class="carousel-item active"
-                    style="background-image: url('https://res.cloudinary.com/jerrick/image/upload/fl_progressive,q_auto,w_1024/i5fhnwl9adcawdueihpu.jpg')">
+                <div class="carousel-item active" style="background-image: url('https://res.cloudinary.com/jerrick/image/upload/fl_progressive,q_auto,w_1024/i5fhnwl9adcawdueihpu.jpg')">
                     <div class="carousel-caption d-none d-md-block">
                         <h3>Promoción de Contratación</h3>
                         <p>This is a description for the first slide.</p>
                     </div>
                 </div>
                 <!-- Slide Two - Set the background image for this slide in the line below -->
-                <div class="carousel-item"
-                    style="background-image: url('https://www.forbes.com/advisor/wp-content/uploads/2021/04/featured-image-types-of-paint.jpeg.jpg')">
+                <div class="carousel-item" style="background-image: url('https://www.forbes.com/advisor/wp-content/uploads/2021/04/featured-image-types-of-paint.jpeg.jpg')">
                     <div class="carousel-caption d-none d-md-block">
                         <h3>Promoción de Pinturas de hogar</h3>
                         <p>This is a description for the second slide.</p>
                     </div>
                 </div>
                 <!-- Slide Three - Set the background image for this slide in the line below -->
-                <div class="carousel-item"
-                    style="background-image: url('https://mymodernmet.com/wp/wp-content/uploads/2018/04/best-oil-paints-thumbnail.jpg')">
+                <div class="carousel-item" style="background-image: url('https://mymodernmet.com/wp/wp-content/uploads/2018/04/best-oil-paints-thumbnail.jpg')">
                     <div class="carousel-caption d-none d-md-block">
                         <h3>Promoción de Pinturas para artista</h3>
                         <p>This is a description for the third slide.</p>
@@ -129,10 +196,69 @@
     <div class="container" style="margin-top: 50px;">
 
 
+        <div class="modal fade" id="exampleModal" data-backdrop="static" data-keyboard="false" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesion</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form>
+                        <div class="modal-body">
+                            <div class="login">
 
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Usuario</label>
+                                    <input type="email" class="form-control" id="UsuarReg" aria-describedby="emailHelp">
+                                    <small id="emailHelp" class="form-text text-muted"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="PassReg">
+                                </div>
+
+                            </div>
+
+                            <div class="Registerlogin">
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Usuario</label>
+                                    <input type="email" class="form-control" id="NewUsuario" aria-describedby="emailHelp">
+                                    <small id="emailHelp" class="form-text text-muted"></small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="NewContra">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Correo</label>
+                                    <input type="email" class="form-control" id="NewEmail" aria-describedby="emailHelp">
+                                    <small id="emailHelp" class="form-text text-muted"></small>
+                                </div>
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <p id=QuieroRegistrar style="margin-right:auto ">¿No tienes cuenta? Registrate aquí</p>
+                                <p id=QuieroIniciar style="margin-right:auto ">¿Ya tienes cuenta? Inicia Sesión aquí</p>
+                                <button id="AccionLogin" type="button" class="btn btn-primary">Entrar</button>
+                                <button onClick="Registrar()" id="AccionRegistrar" type="button" class="btn btn-primary">Registrarme</button>
+
+
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
         <br id="categ">
         <br>
-        <br>
+
         <br>
 
         <div> </div>
@@ -142,28 +268,32 @@
         <div class="row">
             <div class="col-md-4 mb-5">
                 <div class="card">
-                    <img class="card-img-top border-bottom" src="../Images/Painter.jpg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title" style="text-align: center;">Especialistas</h4>
-                    </div>
-
+                    <a href="especialistas.html" style="text-decoration: none; color: black;">
+                        <img class="card-img-top border-bottom" src="../Images/Painter.jpg" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title" style="text-align: center;">Especialistas</h4>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card">
-                    <img class="card-img-top" src="../Images/Pinturas.jpg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title" style="text-align: center;">Pinturas</h4>
-                    </div>
-
+                    <a href="artista.html" style="text-decoration: none; color: black;">
+                        <img class="card-img-top" src="../Images/Pinturas.jpg" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title" style="text-align: center;">Pinturas</h4>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card">
-                    <img class="card-img-top" src="../Images/Materiales.jpg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title" style="text-align: center;">Materiales para Pintar</h4>
-                    </div>
+                    <a href="artista.html" style="text-decoration: none; color: black;">
+                        <img class="card-img-top" src="../Images/Materiales.jpg" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title" style="text-align: center;">Materiales para Pintar</h4>
+                        </div>
+                    </a>
 
                 </div>
             </div>
@@ -174,7 +304,7 @@
         <div class="row">
             <div class="col-md-6 mb-5">
                 <div class="card">
-                    <a href="artista.html" style="text-decoration: none; color: black;">
+                    <a href="artista.php" style="text-decoration: none; color: black;">
                         <img class="card-img-top border-bottom" src="../Images/artista.jpg" alt="">
                         <div class="card-body">
                             <h4 class="card-title" style="text-align: center;">Artistas</h4>
@@ -185,11 +315,12 @@
             </div>
             <div id="tpabout" class="col-md-6 mb-5">
                 <div class="card">
-                    <img class="card-img-top" src="../Images/Grafitero.jpg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title" style="text-align: center;">Arte Urbano</h4>
-                    </div>
-
+                    <a href="artista.html" style="text-decoration: none; color: black;">
+                        <img class="card-img-top" src="../Images/Grafitero.jpg" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title" style="text-align: center;">Arte Urbano</h4>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -197,10 +328,12 @@
 
         </div>
 
+
+        <br>
+        <br id="about">
         <div class="about" style="text-align: center; margin-bottom: 20px">
 
-            <br>
-            <br id="about">
+
             <div class="jumbotron jumbotron-fluid" style="background-color: #8ECDFF;">
                 <div class="container">
                     <h1 id="PEC" class="display-4">¿Quieres saber quienes somos?</h1>
@@ -221,6 +354,7 @@
 
 
         </div>
+
         <section>
             <div class="info-adicional">
                 <div class="info-slide">
@@ -253,6 +387,8 @@
             </div>
         </section>
 
+
+
     </div>
     <!-- /.container -->
 
@@ -269,12 +405,85 @@
     < src="vendor/bootstrap/js/bootstrap.bundle.min.js"></> -->
 
     <script>
+        $(document).ready(function() {
 
-        // $(document).ready(function () {
-        //     $("button").cl
+            $(".Registerlogin").hide();
+            $("#AccionRegistrar").hide();
+            $("#QuieroIniciar").hide();
 
-        // });
+            $("#QuieroRegistrar").click(function() {
 
+                $(".login").hide();
+                $(".Registerlogin").fadeIn();
+                $("#AccionLogin").hide();
+                $("#AccionRegistrar").fadeIn();
+                $("#QuieroRegistrar").hide();
+                $("#QuieroIniciar").fadeIn();
+
+            });
+
+
+
+            $("#QuieroIniciar").click(function() {
+                $(".login").fadeIn();
+                $(".Registerlogin").hide();
+                $("#AccionLogin").fadeIn();
+                $("#AccionRegistrar").hide();
+                $("#QuieroRegistrar").fadeIn();
+                $("#QuieroIniciar").hide();
+            });
+
+            $("#AccionLogin").click(function() {
+
+                var Usuario = $("#UsuarReg").val();
+                var Contra = $("#PassReg").val();
+
+                window.location.href = "../QuerysPhp/SesionIniciada.php?Usuario=" + Usuario + "&Contra=" + Contra;
+
+            });
+
+            $("#AccionRegistrar").click(function() {
+                var Usuario = $("#NewUsuario").val();
+                var Email = $("#NewEmail").val();
+                var Contra = $("#NewContra").val();
+
+                window.location.href = "Registrar.php?Usuario=" + Usuario + "&Email=" + Email + "&Contra=" + Contra;
+            });
+
+
+            $("#aiuda").click(function() {
+                introJs().setOptions({
+                    steps: [{
+                        intro: "¡Hola!, bienvenido seas a Industrial Painting, ¡la mejor tienda para realizar cualquier trabajo relacionado a la pintura!"
+                    }, {
+                        element: document.querySelector('#linkcateg'),
+                        intro: "Presiona aquí para llevarte a las categorías que manejamos en la página."
+                    }, {
+                        element: document.querySelector('#linkabout'),
+                        intro: "Presiona aquí para llevarte a la seccion donde puedes saber un poco más de nosotros."
+                    }, {
+                        element: document.querySelector('#carouselExampleIndicators'),
+                        intro: "Aquí veras los artículos (o servicios) que esten en promoción."
+                    }, {
+                        element: document.querySelector('#categorias'),
+                        intro: "Aquí veras las categorías, dependiendo de tu estilo y de lo que busques lo veras aquí."
+                    }, {
+                        element: document.querySelector('.about'),
+                        intro: "Aquí conoceras un poco quienes somos :)."
+                    }, {
+                        element: document.querySelector('.info-adicional'),
+                        intro: "Aquí veras información adicional, como métodos de pago y más!."
+                    }, {
+                        element: document.querySelector('#aiuda'),
+                        intro: "En caso de que olvides algo, puedes volver a este botón, sin problema te lo volvemos a explicar, gracias por visitarnos :D"
+                    }, {
+                        intro: '<img src="https://support.schoology.com/hc/user_images/Lojbjo7Tth4Eo_Iywy8Bgg.gif" onerror="this.onerror=null;this.src=\'https://i.giphy.com/ujUdrdpX7Ok5W.gif\';" alt="">'
+                    }]
+
+                }).start();
+            });
+
+        });
     </script>
 
 
