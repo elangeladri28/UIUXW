@@ -9,8 +9,8 @@ body {
 }
 
 #Buscador {
-  max-width: 500px;
-  margin-left: 50px;
+  max-width: 300px;
+  margin-left: 30px;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 8px;
@@ -38,6 +38,16 @@ body {
   cursor: pointer;
   color: rgb(75, 146, 253);
   text-decoration: underline;
+}
+
+.card-img-top{
+  height: 5vh;
+  min-height: 100px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 @media screen and (max-width: 1200px) {
