@@ -22,7 +22,7 @@
 
 
     <link rel="icon" type="image/png" href="Logo.png" />
-    <link rel="stylesheet" href="../css/modsartista.css">
+    <link rel="stylesheet" href="../css/modspinturas.css">
 
 
 
@@ -71,6 +71,7 @@
 
 
 
+
                     <!-- <a id="btniniciosesion" class="btn btn-primary" href="Login.html">Iniciar Sesión</a> -->
                     <!-- Button trigger modal -->
 
@@ -82,7 +83,6 @@
 
                     ?>
                         <img src="https://www.pngarts.com/files/10/Default-Profile-Picture-Transparent-Images.png" width="40px" alt="">
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <?php
@@ -187,11 +187,11 @@
                 </div>
             </div>
         </div>
-        <header class="py-4" style="background-color: cornflowerblue;">
+        <header class="py-4" style="background-color: #4F5BD6;">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Tienda para Artistas</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Espacio dedicado a los artistas</p>
+                    <h1 class="display-4 fw-bolder">Arte Urbano</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Queremos que te sientas bienvenido y en casa.</p>
                 </div>
             </div>
         </header>
@@ -236,7 +236,7 @@
         $(document).ready(function() {
 
             var categoryData = {
-                Categoria: "Artista"
+                Categoria: "ArteUrbano"
             };
             $.ajax({
                 type: "GET",
@@ -244,8 +244,10 @@
                 data: categoryData,
                 dataType: 'json',
                 success: function(result) {
-
+                    // var html;
+                    var i = 0;
                     result.forEach(categoria => {
+
                         html = `
                         <div class="col mb-5">
                                              <div class="card h-100">
@@ -266,7 +268,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div  class="text-center"><a href="seleccionado.php?Producto=${categoria.Product_Name}&Categoria=${"Artista"}" type="button" class="btn btn-outline-dark mt-auto">Mirar</a>
+                                <div  class="text-center"><a href="seleccionado.php?Producto=${categoria.Product_Name}&Categoria=${"ArteUrbano"}" type="button" class="btn btn-outline-dark mt-auto">Mirar</a>
                                 </div>
                             </div>
                         </div>
@@ -347,7 +349,7 @@
             $("#SelProd").click(function() {
 
                 var Prod = $("#NombreProd").text();
-                var Categ = "Artista";
+                var Categ = "ArteUrbano";
                 console.log(Prod);
                 console.log(Categ);
 
@@ -356,29 +358,29 @@
 
             });
 
-            $("#aiuda").click(function() {
+            // $("#aiuda").click(function() {
 
-                introJs().setOptions({
-                    steps: [{
-                        intro: "¡Hola!, veo que eres un artista, ¡eso es increible!, te enseñare como navegar por aquí."
-                    }, {
-                        element: document.querySelector('#ArtistPlace'),
-                        intro: "Esto es solo un simple recordatorio de donde te has metido."
-                    }, {
-                        intro: "En está página veras todos los artículos disponibles."
-                    }, {
-                        element: document.querySelector('#examplecard'),
-                        intro: "Aquí veras una imagen del articulo, nombre y precio."
-                    }, {
-                        element: document.querySelector('#verarticulo'),
-                        intro: "Puedes ver más detalles del producto o tambien puedes comprarlo ingresando desde aquí."
-                    }, {
-                        element: document.querySelector('#aiuda'),
-                        intro: "En caso de que olvides algo, puedes volver a este botón, sin problema te lo volvemos a explicar."
-                    }]
+            //     introJs().setOptions({
+            //         steps: [{
+            //             intro: "¡Hola!, veo que eres un artista, ¡eso es increible!, te enseñare como navegar por aquí."
+            //         }, {
+            //             element: document.querySelector('#ArtistPlace'),
+            //             intro: "Esto es solo un simple recordatorio de donde te has metido."
+            //         }, {
+            //             intro: "En está página veras todos los artículos disponibles."
+            //         }, {
+            //             element: document.querySelector('#examplecard'),
+            //             intro: "Aquí veras una imagen del articulo, nombre y precio."
+            //         }, {
+            //             element: document.querySelector('#verarticulo'),
+            //             intro: "Puedes ver más detalles del producto o tambien puedes comprarlo ingresando desde aquí."
+            //         }, {
+            //             element: document.querySelector('#aiuda'),
+            //             intro: "En caso de que olvides algo, puedes volver a este botón, sin problema te lo volvemos a explicar."
+            //         }]
 
-                }).start();
-            });
+            //     }).start();
+            // });
         });
     </script>
 

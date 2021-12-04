@@ -22,7 +22,7 @@
 
 
     <link rel="icon" type="image/png" href="Logo.png" />
-    <link rel="stylesheet" href="../css/modsartista.css">
+    <link rel="stylesheet" href="../css/modspinturas.css">
 
 
 
@@ -71,6 +71,7 @@
 
 
 
+
                     <!-- <a id="btniniciosesion" class="btn btn-primary" href="Login.html">Iniciar Sesión</a> -->
                     <!-- Button trigger modal -->
 
@@ -82,7 +83,6 @@
 
                     ?>
                         <img src="https://www.pngarts.com/files/10/Default-Profile-Picture-Transparent-Images.png" width="40px" alt="">
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <?php
@@ -178,8 +178,6 @@
                                 <p id=QuieroIniciar style="margin-right:auto ">¿Ya tienes cuenta? Inicia Sesión aquí</p>
                                 <button id="AccionLogin" type="button" class="btn btn-primary">Entrar</button>
                                 <button onClick="Registrar()" id="AccionRegistrar" type="button" class="btn btn-primary">Registrarme</button>
-
-
                             </div>
                         </div>
                     </form>
@@ -187,11 +185,11 @@
                 </div>
             </div>
         </div>
-        <header class="py-4" style="background-color: cornflowerblue;">
+        <header class="py-4" style="background-color: #4FA2D6;">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Tienda para Artistas</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Espacio dedicado a los artistas</p>
+                    <h1 class="display-4 fw-bolder">Tienda de Materiales</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Realiza todos los cambios a tu hogar con estos objetos.</p>
                 </div>
             </div>
         </header>
@@ -236,7 +234,7 @@
         $(document).ready(function() {
 
             var categoryData = {
-                Categoria: "Artista"
+                Categoria: "MaterialesPintar"
             };
             $.ajax({
                 type: "GET",
@@ -244,8 +242,10 @@
                 data: categoryData,
                 dataType: 'json',
                 success: function(result) {
-
+                    // var html;
+                    var i = 0;
                     result.forEach(categoria => {
+
                         html = `
                         <div class="col mb-5">
                                              <div class="card h-100">
@@ -266,7 +266,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div  class="text-center"><a href="seleccionado.php?Producto=${categoria.Product_Name}&Categoria=${"Artista"}" type="button" class="btn btn-outline-dark mt-auto">Mirar</a>
+                                <div  class="text-center"><a href="seleccionado.php?Producto=${categoria.Product_Name}&Categoria=${"MaterialesPintar"}" type="button" class="btn btn-outline-dark mt-auto">Mirar</a>
                                 </div>
                             </div>
                         </div>
@@ -347,7 +347,7 @@
             $("#SelProd").click(function() {
 
                 var Prod = $("#NombreProd").text();
-                var Categ = "Artista";
+                var Categ = "MaterialesPintar";
                 console.log(Prod);
                 console.log(Categ);
 

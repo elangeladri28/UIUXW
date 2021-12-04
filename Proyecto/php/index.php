@@ -90,6 +90,7 @@
 
 
                     ?>
+                        <img src="https://www.pngarts.com/files/10/Default-Profile-Picture-Transparent-Images.png" width="40px" alt="">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <?php
@@ -158,28 +159,28 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner" role="listbox">
+            <div id="carrusel" class="carousel-inner" role="listbox">
                 <!-- Slide One - Set the background image for this slide in the line below -->
-                <div class="carousel-item active" style="background-image: url('https://res.cloudinary.com/jerrick/image/upload/fl_progressive,q_auto,w_1024/i5fhnwl9adcawdueihpu.jpg')">
+                <!-- <div class="carousel-item active" style="background-image: url('https://res.cloudinary.com/jerrick/image/upload/fl_progressive,q_auto,w_1024/i5fhnwl9adcawdueihpu.jpg')">
                     <div class="carousel-caption d-none d-md-block">
                         <h3>Promoción de Contratación</h3>
                         <p>This is a description for the first slide.</p>
                     </div>
-                </div>
+                </div> -->
                 <!-- Slide Two - Set the background image for this slide in the line below -->
-                <div class="carousel-item" style="background-image: url('https://www.forbes.com/advisor/wp-content/uploads/2021/04/featured-image-types-of-paint.jpeg.jpg')">
+                <div class="carousel-item active" style="background-image: url('https://www.forbes.com/advisor/wp-content/uploads/2021/04/featured-image-types-of-paint.jpeg.jpg')">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3>Promoción de Pinturas de hogar</h3>
-                        <p>This is a description for the second slide.</p>
+                        <h3>Bienvenido</h3>
+                        <p>Tenemos nuevos articulos disponibles</p>
                     </div>
                 </div>
                 <!-- Slide Three - Set the background image for this slide in the line below -->
-                <div class="carousel-item" style="background-image: url('https://mymodernmet.com/wp/wp-content/uploads/2018/04/best-oil-paints-thumbnail.jpg')">
+                <!-- <div class="carousel-item" style="background-image: url('https://mymodernmet.com/wp/wp-content/uploads/2018/04/best-oil-paints-thumbnail.jpg')">
                     <div class="carousel-caption d-none d-md-block">
                         <h3>Promoción de Pinturas para artista</h3>
                         <p>This is a description for the third slide.</p>
                     </div>
-                </div>
+                </div> -->
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -268,7 +269,7 @@
         <div class="row">
             <div class="col-md-4 mb-5">
                 <div class="card">
-                    <a href="especialistas.html" style="text-decoration: none; color: black;">
+                    <a href="" data-toggle="modal" data-target="#mensajito" style="text-decoration: none; color: black;">
                         <img class="card-img-top border-bottom" src="../Images/Painter.jpg" alt="">
                         <div class="card-body">
                             <h4 class="card-title" style="text-align: center;">Especialistas</h4>
@@ -278,7 +279,7 @@
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card">
-                    <a href="artista.html" style="text-decoration: none; color: black;">
+                    <a href="Pinturas.php" style="text-decoration: none; color: black;">
                         <img class="card-img-top" src="../Images/Pinturas.jpg" alt="">
                         <div class="card-body">
                             <h4 class="card-title" style="text-align: center;">Pinturas</h4>
@@ -288,7 +289,7 @@
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card">
-                    <a href="artista.html" style="text-decoration: none; color: black;">
+                    <a href="materialespintar.php" style="text-decoration: none; color: black;">
                         <img class="card-img-top" src="../Images/Materiales.jpg" alt="">
                         <div class="card-body">
                             <h4 class="card-title" style="text-align: center;">Materiales para Pintar</h4>
@@ -313,9 +314,12 @@
 
                 </div>
             </div>
+
+
+
             <div id="tpabout" class="col-md-6 mb-5">
                 <div class="card">
-                    <a href="artista.html" style="text-decoration: none; color: black;">
+                    <a href="arteurbano.php" style="text-decoration: none; color: black;">
                         <img class="card-img-top" src="../Images/Grafitero.jpg" alt="">
                         <div class="card-body">
                             <h4 class="card-title" style="text-align: center;">Arte Urbano</h4>
@@ -328,6 +332,25 @@
 
         </div>
 
+        <div class="modal fade" id="mensajito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <br>
         <br id="about">
@@ -362,27 +385,21 @@
                         <img src="../Images/Tarjetas.png" width="180px" alt="">
                     </div>
                     <h3 id="PEC" style="text-align: center; margin-top: 20px;">Pago con Tarjeta</h3>
-                    <h6 style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                        faucibus fermentum tellus, sollicitudin placerat augue. Duis dignissim ante et orci aliquet
-                        rhoncus a vel lorem</h6>
+                    <h6 style="text-align: center;">Aceptamos todas las tarjetas, tanto VISA y MasterCard, todas son bienvenidas.</h6>
                 </div>
                 <div id="middle-pic" class=" info-slide">
                     <div class="img-container">
                         <img src="../Images/Mexico.png" width="220px" alt="">
                     </div>
-                    <h3 id="PEC" style="text-align: center; margin-top: 20px;">Envios a todo Mexico</h3>
-                    <h6 style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                        faucibus fermentum tellus, sollicitudin placerat augue. Duis dignissim ante et orci aliquet
-                        rhoncus a vel lorem</h6>
+                    <h3 id="PEC" style="text-align: center; margin-top: 20px;">Envios a todo México</h3>
+                    <h6 style="text-align: center;">Los envios son totalmente gratuitos a cualquier parte del país, sin restriccion alguna.</h6>
                 </div>
                 <div class="info-slide">
                     <div class="img-container">
                         <img src="../Images/shield.png" width="180px" alt="">
                     </div>
                     <h3 id="PEC" style="text-align: center; margin-top: 20px;">Compra Protegida</h3>
-                    <h6 style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                        faucibus fermentum tellus, sollicitudin placerat augue. Duis dignissim ante et orci aliquet
-                        rhoncus a vel lorem</h6>
+                    <h6 style="text-align: center;">¿Tu compra viene dañada o defectuosa?, No te preocupes, con nuestro sello de compra protegida podremos ayudarte con un nuevo artículo o devolución del mismo.</h6>
                 </div>
             </div>
         </section>
@@ -406,6 +423,44 @@
 
     <script>
         $(document).ready(function() {
+            console.log("hola");
+
+            $.ajax({
+                type: "GET",
+                url: "../QuerysPhp/nuevosofertas.php",
+                async: true,
+                dataType: 'json',
+                success: function(result) {
+                    // var html;
+                    var i = 0;
+                    result.forEach(Ultimos => {
+                        console.log("hola");
+                        html = `
+                        <div class="carousel-item" style="background-image: url('${Ultimos.Imagen}')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>${Ultimos.Product_Name}</h3>
+                        <p>${Ultimos.Descripcion}</p>
+                    </div>
+                    </div>
+                        `;
+
+
+                        $('#carrusel').append(html);
+
+
+
+
+                    })
+
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Status: " + textStatus);
+                    alert("Error: " + errorThrown);
+                }
+
+
+            });
+
 
             $(".Registerlogin").hide();
             $("#AccionRegistrar").hide();
@@ -463,7 +518,7 @@
                         intro: "Presiona aquí para llevarte a la seccion donde puedes saber un poco más de nosotros."
                     }, {
                         element: document.querySelector('#carouselExampleIndicators'),
-                        intro: "Aquí veras los artículos (o servicios) que esten en promoción."
+                        intro: "Aquí veras novedades o los artículos que esten en promoción."
                     }, {
                         element: document.querySelector('#categorias'),
                         intro: "Aquí veras las categorías, dependiendo de tu estilo y de lo que busques lo veras aquí."

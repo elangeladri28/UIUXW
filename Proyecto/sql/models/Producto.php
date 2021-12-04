@@ -39,4 +39,19 @@ class ProductosModel
         }
         return $this->productos_model;
     }
+
+    public function MostrarUltimos()
+    {
+        
+        $this->productos_model = array();;
+        $sql = "call MostrarUltimos";
+        $result = $this->db->prepare($sql);
+        $result->execute(array());
+
+        while ($filas = $result->fetch(PDO::FETCH_ASSOC)) {
+            $this->productos_model[] = $filas;
+        }
+        return $this->productos_model;
+
+    }
 }
