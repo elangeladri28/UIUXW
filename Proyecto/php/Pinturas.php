@@ -329,10 +329,16 @@
 
             $("#AccionLogin").click(function() {
 
+
+
                 var Usuario = $("#UsuarReg").val();
                 var Contra = $("#PassReg").val();
 
-                window.location.href = "../QuerysPhp/SesionIniciada.php?Usuario=" + Usuario + "&Contra=" + Contra;
+                if (Usuario != "" && Contra != "") {
+                    window.location.href = "../QuerysPhp/SesionIniciada.php?Usuario=" + Usuario + "&Contra=" + Contra;
+                } else {
+                    alert("Favor de llenar todos los campos");
+                }
 
             });
 
@@ -341,7 +347,15 @@
                 var Email = $("#NewEmail").val();
                 var Contra = $("#NewContra").val();
 
-                window.location.href = "Registrar.php?Usuario=" + Usuario + "&Email=" + Email + "&Contra=" + Contra;
+
+                if (Usuario != "" && Email != "" && Contra != "") {
+
+                    window.location.href = "Registrar.php?Usuario=" + Usuario + "&Email=" + Email + "&Contra=" + Contra;
+
+                } else {
+                    alert("Favor de llenar todos los campos");
+                }
+
             });
 
             $("#SelProd").click(function() {

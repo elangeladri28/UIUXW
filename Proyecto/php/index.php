@@ -336,13 +336,16 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Contratación de Especialistas</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        ...
+                        Muchas gracias por elegir Industrial Painting, la compañia que hace que tu hogar vuelva a tener vida con colores, por el momento nuestra parte de contratacion con especialistas esta siendo de esta manera, hacemos lo posible, para que pronto puedas realizar la cotización directa de la pagina.
+                        Más información al número: 555-5555.
+                        Agradecemos el contacto y lamentamos el inconveniente.
+                        Muchas gracias.
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -490,10 +493,18 @@
 
             $("#AccionLogin").click(function() {
 
+                
+
                 var Usuario = $("#UsuarReg").val();
                 var Contra = $("#PassReg").val();
 
-                window.location.href = "../QuerysPhp/SesionIniciada.php?Usuario=" + Usuario + "&Contra=" + Contra;
+                if(Usuario != "" && Contra != ""){
+                    window.location.href = "../QuerysPhp/SesionIniciada.php?Usuario=" + Usuario + "&Contra=" + Contra;
+                }
+
+               else{
+                   alert("Favor de llenar todos los campos");
+               }
 
             });
 
@@ -502,7 +513,17 @@
                 var Email = $("#NewEmail").val();
                 var Contra = $("#NewContra").val();
 
-                window.location.href = "Registrar.php?Usuario=" + Usuario + "&Email=" + Email + "&Contra=" + Contra;
+
+                if(Usuario != "" && Email != "" && Contra != ""){
+
+                    window.location.href = "Registrar.php?Usuario=" + Usuario + "&Email=" + Email + "&Contra=" + Contra;
+
+                }
+
+                else{
+                    alert("Favor de llenar todos los campos");
+                }
+                
             });
 
 

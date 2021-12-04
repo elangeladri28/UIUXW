@@ -78,7 +78,7 @@
 
 
                     ?>
-                    <img src="https://www.pngarts.com/files/10/Default-Profile-Picture-Transparent-Images.png" width="40px" alt="">
+                        <img src="https://www.pngarts.com/files/10/Default-Profile-Picture-Transparent-Images.png" width="40px" alt="">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <?php
@@ -239,7 +239,7 @@
                                                         <option>5</option>
                                                     </select>
                                                 </div>
-                                                <a href="#" class="btn btn-success" style="padding-left:30px; padding-right:30px;">Comprar Ahora</a>
+                                                <a href="" id="Comprar" data-toggle="modal" data-target="#Metodo" class="btn btn-success" style="padding-left:30px; padding-right:30px;">Comprar Ahora</a>
                                                 <br>
                                                 <br>
                                                 <a href="#" class="btn btn-primary" style="padding-left:20px; padding-right:20px;">Agregar al
@@ -270,6 +270,47 @@
 
         <br>
 
+
+        <div class="modal fade" id="Metodo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Pago</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label id="Titular" for="recipient-name" class="col-form-label">Titular de la tarjeta:</label>
+                                <input type="text" class="form-control" id="">
+                            </div>
+                            <div class="form-group">
+                                <label id="numcard" for="recipient-name" class="col-form-label">Numero de tarjeta:</label>
+                                <input type="text" maxlength="16" class="form-control" id="">
+                            </div>
+                            <div style="float: left;">
+
+                                <div class="form-group">
+                                    <label id="expires" for="recipient-name" class="col-form-label">Fecha de Vencimiento:</label>
+                                    <input type="text" maxlength="5" class="form-control" id="" style="max-width: 100px">
+                                </div>
+                                <div class="form-group">
+                                    <label id="cvv" for="recipient-name" class="col-form-label">CVV:</label>
+                                    <input type="text" maxlength="3" class="form-control" id="" style="max-width: 100px">
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button id="Cobrar" type="button" class="btn btn-primary">Pagar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- <div class=" card-deck">
             <div class="card">
                 <img src="..." class="card-img-top" alt="...">
@@ -443,10 +484,16 @@
 
             $("#AccionLogin").click(function() {
 
+
+
                 var Usuario = $("#UsuarReg").val();
                 var Contra = $("#PassReg").val();
 
-                window.location.href = "../QuerysPhp/SesionIniciada.php?Usuario=" + Usuario + "&Contra=" + Contra;
+                if (Usuario != "" && Contra != "") {
+                    window.location.href = "../QuerysPhp/SesionIniciada.php?Usuario=" + Usuario + "&Contra=" + Contra;
+                } else {
+                    alert("Favor de llenar todos los campos");
+                }
 
             });
 
@@ -455,9 +502,22 @@
                 var Email = $("#NewEmail").val();
                 var Contra = $("#NewContra").val();
 
-                window.location.href = "Registrar.php?Usuario=" + Usuario + "&Email=" + Email + "&Contra=" + Contra;
+
+                if (Usuario != "" && Email != "" && Contra != "") {
+
+                    window.location.href = "Registrar.php?Usuario=" + Usuario + "&Email=" + Email + "&Contra=" + Contra;
+
+                } else {
+                    alert("Favor de llenar todos los campos");
+                }
+
             });
 
+            $("#Cobrar").click(function(){
+
+                
+
+            });
 
         });
     </script>
